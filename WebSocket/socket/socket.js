@@ -51,7 +51,7 @@ const initializeSocket = (server) => {
                 try {
                     // const response = await fetch('https://api.quotable.io/random')
                     // const quote = await response.json()
-                     const response = await fetch('http://localhost:5000/random')
+                     const response = await fetch('http://localhost:5001/random')
                      const quote = await response.json()
                     const result = await MessageService.handleMessage(room, quote.content, null);
                     if (result) {
