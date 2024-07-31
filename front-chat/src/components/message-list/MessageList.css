@@ -1,0 +1,32 @@
+.message-flex {
+    display: flex;
+    max-width: 50%;
+}
+
+.message-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #3b4152;
+    color: #fff;
+    border-radius: 20px;
+    /*display: inline-block; я не знаю як краще*/
+}
+
+.my-message {
+    align-self: flex-end;
+}
+
+.message-date-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-date {
+    font-size: 11px;
+    color: #3b4152;
+}

@@ -1,0 +1,77 @@
+.chat-list-container ul {
+    list-style-type: none;
+    padding: 0;
+    height: calc(100vh - 250px);
+    overflow-y: auto;
+}
+
+.chat-list-container .chat-item {
+    position: relative;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-list-container .chat-item:hover {
+    background-color: #e0e0e0;
+}
+
+.chat-list-container .chat-item .chat-actions {
+    display: none;
+    right: 10px;
+    top: 10px;
+}
+
+.chat-list-container .chat-item:hover .chat-actions {
+    display: block;
+}
+.chat-list-container .chat-item:hover .chat-date {
+    display: none;
+}
+
+.chat-list-container .chat-actions button {
+    margin-left: 5px;
+}
+
+
+.chat-user-icon-and-message {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-list {
+    width: 30%;
+    border-right: 1px solid #ddd;
+}
+
+.chat-name {
+    font-size: 16px;
+}
+
+.last-message {
+    font-size: 11px;
+}
+
+@media (max-width: 750px) {
+    .chat-date {
+        display: none;
+    }
+}
+
+@media (max-width: 590px) {
+    .user-phone {
+        display: none !important;
+    }
+}
+@media (max-width: 513px) {
+    .chat-item.selected .chat-user-icon-and-message {
+        display: none;
+    }
+
+    .chat-item .chat-user-icon-and-message {
+        display: block;
+    }
+}

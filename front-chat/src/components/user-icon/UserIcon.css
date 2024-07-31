@@ -1,0 +1,25 @@
+.user-icon {
+    position: relative;
+    display: inline-block;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 24px;
+    max-height: 25px;
+}
+
+.user-icon i.fa-user {
+    color: #333;
+}
+
+.user-icon i.fa-check {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    color: green;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 2px;
+    border: 1px solid #f0f0f0;
+}

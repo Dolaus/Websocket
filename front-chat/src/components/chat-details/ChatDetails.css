@@ -1,0 +1,4 @@
+.chat-details-flex {
+    display: flex;
+    gap: 20px;
+}

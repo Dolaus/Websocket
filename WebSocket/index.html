@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.IO Client</title>
+</head>
+<body>
+<h1>Socket.IO Client</h1>
+<div>
+    <input type="text" id="messageInput" placeholder="Enter your message">
+    <button id="sendButton">Send</button>
+</div>
+<div id="messages"></div>
+<script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+<script>
+    // Ініціалізація підключення до сервера
+    const socket = io('http://localhost:3000');
+
+    // Обробка підключення
+    socket.emit('join', 'room2');
+
+    // Відправка повідомлення
+    function sendMessage(room, message) {
+        socket.emit('message', { room, message });
+    }
+
+    // Обробка події відправки повідомлення
+    document.getElementById('sendButton').addEventListener('click', () => {
+        const messageInput = document.getElementById('messageInput');
+        const message = messageInput.value;
+        sendMessage('room2', message);
+        messageInput.value = ''; // Очищення поля вводу
+    });
+
+    // Отримання нового повідомлення
+    socket.on('newMessage', ({ room, message }) => {
+        console.log('New message from room:', room, 'Message:', message);
+        displayMessage(room, socket.id + message);
+    });
+
+    // Відображення повідомлення
+    function displayMessage(room, message) {
+        const messagesDiv = document.getElementById('messages');
+        const messageElement = document.createElement('div');
+        messageElement.textContent = `Room ${room}: ${message}`;
+        messagesDiv.appendChild(messageElement);
+    }
+</script>
+</body>
+</html>
